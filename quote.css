@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@1,900&display=swap');
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+.container{
+    color: white;
+    height: 47rem;
+    background: rgb(63,94,251);
+    background: #000046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgb(57,71,74);
+background: linear-gradient(75deg, rgba(57,71,74,1) 0%, rgba(52,93,148,1) 100%);
+    
+}
+button#tweet {
+    background: deepskyblue;
+    color: black;
+    padding: 12px 17px 8px 15px;
+    border-radius: 1rem;
+    box-shadow: 0rem 0rem 1rem white;
+    font-size: 15px;
+    position: relative;
+    top: 30rem;
+    left: 42rem;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.contain {
+    background-image: url("b4.jpg");
+    width: 54rem;
+    height: 33rem;
+    position: absolute;
+    left: 19rem;
+    bottom: 9rem;
+    box-shadow: 0rem -1rem 8rem white;
+    border-radius: 2rem;
+}
+.box {
+    position: relative;
+    top: 0rem;
+    left: 4rem;
+    width: 53rem;
+    width: 45rem;
+    height: 23rem;
+
+}
+p#quote {
+        font-size: 2em;
+        text-align: center;
+        position: relative;
+        top: 4rem;
+        color: white;
+        text-shadow: 1px 3px 16px black;
+        font-family: 'Noto Serif Display', serif;
+        padding: 1rem;
+    }
+
+.text {
+        font-size: 1rem;
+        position: relative;
+        left: -2rem;
+        top: 2rem;
+    }
+p#author {
+        font-size: 107%;
+        position: relative;
+        top: 9rem;
+        left: 37rem;
+        width: 14rem;
+        text-shadow: -1px 0px 8px black;
+        font-family: 'Noto Serif Display', serif;
+    }
+p#onClickQuote {
+        background-color: #8a94d8;
+        color: white;
+        font-family: fangsong;
+        margin-left: 2rem;
+        width: 7rem;
+        height: 3rem;
+        text-align: center;
+        padding-top: 1em;
+        border-radius: 1rem;
+        box-shadow: 0rem 0rem 1rem white;
+        margin-top: 5rem;
+        font-family: 'Noto Serif Display', serif;
+    }
+    p#onClickQuote:hover{
+        cursor: pointer;
+    }

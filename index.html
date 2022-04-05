@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css" integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="quote.css">
+    <title>Quote</title>
+</head>
+<body>
+
+
+        <div class="container">
+            <div class="contain">
+                <div class="box">
+                    <p class="number">
+                        <button id="tweet" class="btn">Tweet Now</button> 
+                        </p>
+
+                    <div class="text">
+                        <i class="start-quote fas fa-quote-left"> </i>
+                    </div>
+                    <p id="quote" class="quotes"></p>
+                    <p id="author" class="authors"></p>
+                </div>
+
+                <label class="button">
+                    <p id="onClickQuote"> Click Me </p>
+                </label>
+            </div>
+        </div>
+
+    <script>
+        const quotes = document.getElementById("quote");
+        const authors = document.getElementById("author");
+        const newQuote = document.getElementById("onClickQuote");
+        const tweetMe = document.getElementById("tweet");
+        let realData="";
+        let quotesData='';
+
+
+        const tweetNow = () => {
+         let post = `https://twitter.com/intent/tweet?text=${quotesData.text}`;
+         window.open(post);
+        };
+
+
+        const getNewQuotes = () => {
+            let randomNum = Math.floor(Math.random() * 1643);   
+            quotesData = realData[randomNum];
+            quotes.innerText = `${quotesData.text}`;  //givimg the quote text randomly
+
+
+            // ternery operator
+            quotesData.author == null //if  quotesData == null 
+            ? (author.innerText = "UnKnown")  // then this will run else;
+            : (author.innerText =  `${quotesData.author}` );  //this will run      givimg the quote author randomly
+        };
+
+        const getQuotes = async () =>{
+        const api = "https://type.fit/api/quotes";
+
+        try{
+            let data = await fetch(api);
+            realData = await data.json(); //converting data into json form
+            // console.log(realData[10].text);  //fetch particular array from api.
+
+            getNewQuotes(); //function to get quotes randomly on click
+
+        } catch(error){ }
+
+        };
+
+        tweetMe.addEventListener('click', tweetNow);
+        newQuote.addEventListener('click', getNewQuotes);
+        getQuotes();
+    </script>
+
+</body>
+</html>
